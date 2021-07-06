@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react"; 
 import Recipe from "./Recipe";
-// import './App.css';
+import './App.css';
 
 const App  = () => {
 
@@ -37,13 +37,18 @@ setQuery(search);
           Search
         </button>
     </form>
+    <div className="recipes">
     {recipes.map (recipe => (
     <Recipe
     key ={recipe.recipe.label}
-    title={recipe.recipe.label} calories = {recipe.recipe.calories} 
-    image= {recipe.recipe.image} />
+    title={recipe.recipe.label} 
+    calories = {recipe.recipe.calories} 
+    image= {recipe.recipe.image} 
+    ingredients = {recipe.recipe.ingredients}
+    />
     ))}
     </div>
+  </div>
   );
 
 };
